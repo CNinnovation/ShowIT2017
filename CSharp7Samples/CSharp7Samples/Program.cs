@@ -17,6 +17,7 @@ class Program
 
     private static void BinaryLiteralsAndDigitSeparators()
     {
+        Console.WriteLine(nameof(BinaryLiteralsAndDigitSeparators));
         int b1 = 0b1010111100001100;
 
         Console.WriteLine($"{b1:X}");
@@ -25,6 +26,7 @@ class Program
 
         int b3 = b1 | b2;
         Console.WriteLine($"{b3:X}");
+        Console.WriteLine();
     }
 
     private static void RefLocalAndRefReturn()
@@ -71,22 +73,22 @@ class Program
         //    return x + y + z;
         //}
 
-
-
         int result = InnerMethod(1, 2);
         Console.WriteLine(result);
         Console.WriteLine();
-
     }
 
     private static void LambdaExpressionsEverywhere()
     {
+        Console.WriteLine(nameof(LambdaExpressionsEverywhere));
         var p = new Person("Stephanie Nagel");
         Console.WriteLine(p.FirstName);
+        Console.WriteLine();
     }
 
     private static void TuplesAndDeconstruction()
     {
+        Console.WriteLine(nameof(TuplesAndDeconstruction));
         (var s, var i) = ("magic", 42);
         Console.WriteLine(s);
 
@@ -102,6 +104,7 @@ class Program
         p.Age = 6;
         (var firstname, var lastname, var age) = p;
         Console.WriteLine($"{firstname}");
+        Console.WriteLine();
     }
 
     public static (int Result, int Reminder) Divide(int val1, int val2)
@@ -113,6 +116,7 @@ class Program
 
     private static void PatternMatching()
     {
+        Console.WriteLine(nameof(PatternMatching));
         object[] data = { null, 42, new Person("Matthias Nagel"), new Person("Katharina Nagel") };
 
         foreach (var item in data)
@@ -123,8 +127,7 @@ class Program
         {
             SwitchPattern(item);
         }
-
-
+        Console.WriteLine();
     }
 
     public static void IsPattern(object o)
@@ -138,10 +141,6 @@ class Program
         if (o is Person p) Console.WriteLine($"it's a person: {p.FirstName}");
 
         if (o is Person p2 && p2.FirstName.StartsWith("Ka")) Console.WriteLine($"it's a person starting with Ka {p2.FirstName}");
-
-       
-
-
     }
 
     public static void SwitchPattern(object o)
@@ -164,14 +163,4 @@ class Program
                 break;
         }
     }
-
-
-
-
-
-
-
-
-
-
 }

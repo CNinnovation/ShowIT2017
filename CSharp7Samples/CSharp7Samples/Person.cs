@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Linq;
 
 namespace CSharp7Samples
 {
@@ -32,10 +30,12 @@ namespace CSharp7Samples
 
     public static class StringCollectionExtension
     {
-        public static void MoveElementsTo(this string[] arr, out string s1, out string s2)
+        public static void MoveElementsTo(this IList<string> coll, out string s1, out string s2)
         {
-            s1 = arr[0];
-            s2 = arr[1];
+            if (coll.Count != 2) throw new ArgumentException("wrong collection count", nameof(coll));
+
+            s1 = coll[0];
+            s2 = coll[1];
         }
     }
 }
